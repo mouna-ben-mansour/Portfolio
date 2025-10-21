@@ -40,6 +40,12 @@ jobs:
       
     - name: Run PHPUnit tests
       run: ./vendor/bin/phpunit --colors=always
+      
+    - name: Run PHP_CodeSniffer
+      run: ./vendor/bin/phpcs src
+
+    - name: Run PHPStan (level 5)
+      run: ./vendor/bin/phpstan analyse src --level=5
     
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
