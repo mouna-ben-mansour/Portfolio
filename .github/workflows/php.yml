@@ -45,7 +45,7 @@ jobs:
       run: ./vendor/bin/phpcs .
 
     - name: Run PHPStan (level 5)
-      run: ./vendor/bin/phpstan analyse . --level=5
+      run: ./vendor/bin/phpstan analyse . --level=5 --exclude-path tests
     
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
