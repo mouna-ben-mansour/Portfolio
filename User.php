@@ -1,4 +1,7 @@
 <?php
+
+namespace App;
+
  /*
  Class & Object
  - Class is a blueprint that u can create object from
@@ -29,36 +32,43 @@ Blog Sytem
 -object= Post, Article, News, Information
 -application= Blog system
 */
- class User {
+class User
+{
     // Properties
-    private $name ='Stranger'; //default values
+    private $name = 'Stranger'; //default values
     private $email = 'stranger@email.com';
-    private $age ='20';
+    private $age = '20';
 
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
     }
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->email;
     }
-    public function setEmail($email){
+    public function setEmail($email)
+    {
         $this->email = $email;
     }
-     public function getAge(){
+    public function getAge()
+    {
         return $this->age;
     }
-    public function setAge($age){
+    public function setAge($age)
+    {
         $this->age = $age;
     }
 
-    public function getInitials(){
-        return strtoupper(substr($this->name,0,2));
+    public function getInitials()
+    {
+        return strtoupper(substr($this->name, 0, 2));
     }
-
- }
+}
 /*
  $currentUser = new User();
  $currentUser->setName('Ahmed');
