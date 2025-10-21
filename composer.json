@@ -1,4 +1,7 @@
 {
+    "name": "mouna-ben-mansour/portfolio",
+    "description": "A simple PHP project for testing User class with TDD",
+    "license": "proprietary",
     "require-dev": {
         "phpunit/phpunit": "^8.5",
         "squizlabs/php_codesniffer": "^4.0",
