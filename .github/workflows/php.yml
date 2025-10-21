@@ -42,7 +42,7 @@ jobs:
       run: ./vendor/bin/phpunit 
       
     - name: Run PHP_CodeSniffer
-      run: ./vendor/bin/phpcs .
+      run: ./vendor/bin/phpcs . --ignore=vendor/*
 
     - name: Run PHPStan (level 5)
       run: ./vendor/bin/phpstan analyse . --level=5 --exclude-path tests
