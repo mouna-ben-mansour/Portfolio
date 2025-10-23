@@ -36,7 +36,6 @@ Blog Sytem
 -object= Post, Article, News, Information
 -application= Blog system
 
-  
 */
 class User
 {
@@ -46,8 +45,8 @@ class User
     private $age = '20';
 
     // Constants
-    const ADMINROLE = 'ADMIN';
-    const MINCHARS = 6;
+    public const ADMINROLE = 'ADMIN';
+    public const MINCHARS = 6;
 
     public function getName()
     {
@@ -76,14 +75,14 @@ class User
 
     public function getInitials()
     {
-        if(strlen($this->name) > self::MINCHARS) {
+        if (strlen($this->name) > self::MINCHARS) {
             return strtoupper(substr($this->name, 0, 2));
         } else {
-            return 'User name must be longer than '.self::MINCHARS.' characters';
+            return 'User name must be longer than ' . self::MINCHARS . ' characters';
         }
     }
 }
-
+/*
  $currentUser = new User();
  $currentUser->setName('Ahmed');
  $currentUser->setEmail('test@email.com');
@@ -93,7 +92,7 @@ class User
   echo($currentUser::MINCHARS);
  var_dump($currentUser->getInitials());
  echo '</pre>';
-/*
+
   $nextUser = new User();
    $nextUser->name='Adam';
  $nextUser->email='test@email.com';
