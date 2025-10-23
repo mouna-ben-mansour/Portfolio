@@ -31,7 +31,7 @@ class UserTest extends TestCase
     public function testGetInitials()
     {
         $user = new User();
-        $user->setName('Mouna');
+        $user->setName('MounaMouna');
         $this->assertEquals('MO', $user->getInitials());
     }
 }
