@@ -6,13 +6,17 @@ namespace App;
  Class & Object
  - Class is a blueprint that u can create object from
  -Object is a member in the main Application
- -Class has properties
+ -Class has properties & methods
  - Varibale inside class = property
  - Variable outside class = variable
+ - Function inside class = method
+ - Function outside class = function
  - [ -> ] = object operator
  - [ class ] = Class keyword
  - [ new ] = New Object keyword
  - [private, public, protected] = visibility markers
+ - [ $this ] = Pseudo variable [ refer to object properties ]
+ - [ :: ] = Scope Resolution Operator [ double colon]
  Apple
  - Class = Apple blueprint Design
  - Object = Iphones that china made
@@ -31,6 +35,8 @@ Blog Sytem
 - Class = code to send new Post, Article, News, Information
 -object= Post, Article, News, Information
 -application= Blog system
+
+  
 */
 class User
 {
@@ -38,6 +44,10 @@ class User
     private $name = 'Stranger'; //default values
     private $email = 'stranger@email.com';
     private $age = '20';
+
+    // Constants
+    const ADMINROLE = 'ADMIN';
+    const MINCHARS = 6;
 
     public function getName()
     {
@@ -66,18 +76,24 @@ class User
 
     public function getInitials()
     {
-        return strtoupper(substr($this->name, 0, 2));
+        if(strlen($this->name) > self::MINCHARS) {
+            return strtoupper(substr($this->name, 0, 2));
+        } else {
+            return 'User name must be longer than '.self::MINCHARS.' characters';
+        }
     }
 }
-/*
+
  $currentUser = new User();
  $currentUser->setName('Ahmed');
  $currentUser->setEmail('test@email.com');
  $currentUser->SetAge('32');
  echo '<pre>';
- var_dump($currentUser->getName());
+    echo(User::MINCHARS);
+  echo($currentUser::MINCHARS);
+ var_dump($currentUser->getInitials());
  echo '</pre>';
-
+/*
   $nextUser = new User();
    $nextUser->name='Adam';
  $nextUser->email='test@email.com';
