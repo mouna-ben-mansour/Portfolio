@@ -2,14 +2,33 @@
 
 namespace App;
 
-class Shape
+use App\MakeShape;
+
+class Shape extends MakeShape
 {
     // Properties
-    private $name = 'Shape'; //default values
+    private $name = 'generic'; //default values
     private $size = '20';
+    private $width = 20;
+    private $height = 20;
 
     // Constants
     public const MINCHARS = 6;
+
+    public function calculateArea()
+    {
+        return  $this->width * $this->height;
+    }
+
+    public function calculatePerimeter()
+    {
+        return 2 * ( $this->width * $this->height);
+    }
+
+    public function draw($name)
+    {
+        echo "Drawing a " . $name . " shape\n";
+    }
 
     public function getName()
     {
