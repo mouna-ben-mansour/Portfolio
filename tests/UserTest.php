@@ -28,10 +28,31 @@ class UserTest extends TestCase
         $this->assertEquals('20', $user->getAge());
     }
 
-    public function testGetInitials()
+    public function testGetInitialsWithValidName()
     {
         $user = new User();
         $user->setName('MounaMouna');
         $this->assertEquals('MO', $user->getInitials());
+    }
+
+    public function testGetInitialsWithShortName()
+    {
+        $user = new User();
+        $user->setName('Mo');
+        $this->assertEquals('User name must be longer than ' . User::MINCHARS . ' characters', $user->getInitials());
+    }
+
+    public function testGetInitialsWithExactName()
+    {
+        $user = new User();
+        $user->setName('AliAli');
+        $this->assertEquals('User name must be longer than ' . User::MINCHARS . ' characters', $user->getInitials());
+    }
+
+    public function testGetInitialsWithEmptyName()
+    {
+        $user = new User();
+        $user->setName('');
+        $this->assertEquals('User name must be longer than ' . User::MINCHARS . ' characters', $user->getInitials());
     }
 }

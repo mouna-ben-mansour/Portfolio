@@ -1,2 +1,5 @@
 # Ignore Composer dependencies
 /vendor/
+
+# PHPUnit cache file
+.phpunit.result.cache
